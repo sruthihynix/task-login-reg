@@ -1,0 +1,14 @@
+<h2>Your Cart</h2>
+<ol>
+    {% for item in cart_items %}
+    <li>
+        {{ item.product.name }} - Quantity: {{ item.quantity }}
+        <a href="{% url 'remove' item.id %}">Remove</a>
+    </li>
+    {% empty %}
+    <p>Your cart is empty.</p>
+    {% endfor %}
+</ol>
+
+<!-- Link to continue shopping -->
+<a href="{% url 'product' %}">Go back to products</a>

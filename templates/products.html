@@ -1,0 +1,18 @@
+<h2>Products</h2>
+<div>
+    {% for product in products %}
+<!--    <li>{{ product.name }}-->
+<!--        - Rs.{{ product.price }}-->
+<!--        {{ product.description}}-->
+<!--        <a href="{% url 'addToCart' product.id %}">Add to Cart</a>-->
+
+      <div class="product-card " style=" border: 2px solid; width: 200px;">
+        <h3>{{ product.name }}</h3>
+        <p>Price: Rs.{{ product.price }}</p>
+        <p>{{ product.description }}</p>
+        <a href="{% url 'addToCart' product.id %}" >Add to Cart</a>
+    </div>
+
+    {% endfor %}
+</div>
+
